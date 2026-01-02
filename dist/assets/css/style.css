@@ -2953,13 +2953,10 @@ Lazyload CSS
   visibility: hidden;
   transform: translateY(5px);
 }
-.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
+.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
-.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li.active a {
-  color: var(--color-primary);
 }
 .header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
   opacity: 1;
@@ -2967,21 +2964,6 @@ Lazyload CSS
   transform: translateY(0);
 }
 .header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li .menu-dropdown li:hover .menu-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.header-area .main-navbar .navbar-nav .nav-item .menu-dropdown li:hover .menu-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -5654,6 +5636,14 @@ Authentication CSS
   -webkit-margin-end: 5px;
           margin-inline-end: 5px;
 }
+.blog-details-area .comments .comment-list .comment .comment-body .comment-content .btn-reply {
+  color: var(--color-primary);
+  display: inline-block;
+}
+.blog-details-area .comments .comment-list .comment .comment-body .comment-content .btn-reply i {
+  -webkit-margin-end: 5px;
+          margin-inline-end: 5px;
+}
 .blog-details-area .comments .comment-list .comment .children {
   list-style-type: none;
   padding: 0;
@@ -5964,45 +5954,192 @@ Authentication CSS
   max-width: 550px;
   margin: auto;
   margin-bottom: 20px;
-}/*# sourceMappingURL=style.css.map */
-
-.logo-img {
-    max-width: 100px !important;         
-    height: auto !important;
 }
 
-.logo-4 {
-  height: 30px !important;
-  width: 30px !important;
+/* Lang dropdown — color and mobile visibility tweaks */
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+  --lang-bg: rgba(255,255,255,0.04); /* subtle panel on dark theme */
+  --lang-foreground: #ffffff;
+  --lang-accent: var(--bs-primary, #5b7cff);
 }
 
-.counter-area .card-icon i {
-    display: inline-block;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transition-duration: 0.5s;
+.lang-dropdown .lang-current {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .6rem;
+  background: var(--lang-bg);
+  color: var(--lang-foreground);
+  border-radius: .5rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .15s ease, color .15s ease, transform .08s ease;
 }
 
-html:not(.no-js) [data-aos^=fade][data-aos^=fade].aos-animate {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+.lang-dropdown .lang-current svg {
+  opacity: .85;
 }
 
-html:not(.no-js) [data-aos^=fade][data-aos^=fade] {
-    opacity: 0;
-    transition-property: opacity, -webkit-transform;
-    transition-property: opacity, transform;
-    transition-property: opacity, transform, -webkit-transform;
+.lang-dropdown.open .lang-current {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+  transform: translateY(-1px);
 }
 
-html:not(.no-js) [data-aos=fade-up] {
-    -webkit-transform: translate3d(0, 100px, 0);
-    transform: translate3d(0, 100px, 0);
+.lang-dropdown .lang-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .5rem);
+  min-width: 120px;
+  background: rgba(8,10,15,0.95);
+  color: rgba(255,255,255,0.95);
+  border-radius: .6rem;
+  padding: .35rem;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  z-index: 1200; /* ensure on top of header elements */
+  display: none;
 }
 
-.card-icon i {
-            color: #007bff;
-            font-size: 48px;
-        }
+.lang-dropdown.open .lang-menu {
+  display: block;
+}
+
+.lang-dropdown .lang-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: .45rem .6rem;
+  background: transparent;
+  color: inherit;
+  border: none;
+  border-radius: .45rem;
+  margin: .15rem 0;
+  cursor: pointer;
+  transition: background .12s ease, color .12s ease;
+}
+
+.lang-dropdown .lang-btn:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.lang-dropdown .lang-btn.active {
+  background: linear-gradient(90deg, rgba(91,124,255,0.18), rgba(91,124,255,0.10));
+  color: var(--lang-accent);
+  font-weight: 700;
+}
+
+/* Ensure Good Contrast on Light Theme fallback */
+body:not(.body-dark) .lang-dropdown .lang-current {
+  background: #ffffff;
+  color: #111827;
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* Mobile / inside .mobile-menu adjustments */
+@media (max-width: 991.98px) {
+  /* ensure dropdown sits above the mobile menu overlay and is visible */
+  .mobile-menu .lang-dropdown {
+    position: relative;
+    z-index: 2000;
+  }
+
+  /* inside the mobile menu we want the language menu to expand inline (not overflow-hidden) */
+  .mobile-menu .lang-dropdown .lang-menu {
+    position: relative;
+    right: auto;
+    top: auto;
+    display: block;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.25rem 0;
+    border: none;
+  }
+
+  .mobile-menu .lang-dropdown .lang-btn {
+    padding: .65rem 1rem;
+    text-align: left;
+  }
+}
+
+.course-area { /* no heavy backgrounds to keep it minimal */ }
+
+            .course-area .card.course-card {
+                border: none;
+                background: rgba(255,255,255,0.02);
+                border-radius: 12px;
+                overflow: hidden;
+                transition: transform .22s ease, box-shadow .22s ease;
+                box-shadow: 0 6px 18px rgba(2,6,23,0.18);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .course-area .card.course-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 45px rgba(2,6,23,0.22);
+            }
+
+            .course-area .img-wrap {
+                height: 160px; /* constrained height so image doesn't dominate */
+                overflow: hidden;
+                background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
+            }
+
+            .course-area .img-wrap img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform .45s cubic-bezier(.2,.8,.2,1);
+            }
+
+            .course-area .card.course-card:hover .img-wrap img {
+                transform: scale(1.03);
+            }
+
+            .course-area .card-body {
+                padding: 1rem 1.25rem;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+            }
+
+            .course-area .card-title {
+                font-size: 1.05rem;
+                margin-bottom: .25rem;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1.2;
+            }
+
+            .course-area .card-text {
+                color: #9aa0a6;
+                font-size: .95rem;
+                margin-bottom: .5rem;
+                min-height: 44px; /* keep cards aligned when descriptions vary */
+            }
+
+            .course-area .course-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: .75rem;
+            }
+
+            .course-area .price {
+                color: var(--bs-primary);
+                font-weight: 700;
+            }
+
+            .course-area .btn-buy {
+                padding: .45rem .9rem;
+            }
+
+            @media (max-width: 576px) {
+                .course-area .img-wrap { height: 140px; }
+                .course-area .card-title { font-size: 1rem; }
+                .course-area .card-text { font-size: .9rem; }
+            }

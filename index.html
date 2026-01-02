@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="uz">
 
 <head>
     <meta charset="utf-8">
@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Bilimly Team">
     <meta name="description"
-        content="Bilimly - AI asoslangan STEM va sun’iy intellekt ta’lim platformasi. Interaktiv darslar va AI Student yordamida bilimlaringizni mustahkamlang.">
+        content="Bilimly - AI asoslangan STEM va sun'iy intellekt ta'lim platformasi. Interaktiv darslar va AI Student yordamida bilimlaringizni mustahkamlang.">
     <meta name="keywords"
-        content="Bilimly, STEM, AI, ta'lim, interaktiv o‘rganish, AI Student, EdTech, ta’lim ilovasi, o‘quv platforma, bilim mustahkamlash, amaliy mashg‘ulotlar">
+        content="Bilimly, STEM, AI, ta'lim, interaktiv o'rganish, AI Student, EdTech, ta'lim ilovasi, o'quv platforma, bilim mustahkamlash, amaliy mashg'ulotlar">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Bilimly - AI asoslangan STEM va AI ta’lim platformasi">
+    <meta property="og:title" content="Bilimly - AI asoslangan STEM va AI ta'lim platformasi">
     <meta property="og:description"
-        content="Interaktiv darslar orqali STEM va AI mavzularini o‘rganing va AI Student yordamida bilimlaringizni mustahkamlang.">
+        content="Interaktiv darslar orqali STEM va AI mavzularini o'rganing va AI Student yordamida bilimlaringizni mustahkamlang.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bilimly.app/">
     <meta property="og:image" content="https://www.bilimly.app/assets/images/logo/logo-5.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bilimly - AI asoslangan STEM va AI ta’lim platformasi">
+    <meta name="twitter:title" content="Bilimly - AI asoslangan STEM va AI ta'lim platformasi">
     <meta name="twitter:description"
-        content="Interaktiv darslar orqali STEM va AI mavzularini o‘rganing va AI Student yordamida bilimlaringizni mustahkamlang.">
+        content="Interaktiv darslar orqali STEM va AI mavzularini o'rganing va AI Student yordamida bilimlaringizni mustahkamlang.">
     <meta name="twitter:image" content="https://www.bilimly.app/assets/images/logo/logo-5.svg">
 
     <!-- Title -->
-    <title>Bilimly - O`rgatib o`rgan, o`rganib o`rgat!</title>
+    <title data-lang="pageTitle">Bilimly - O`rgatib o`rgan, o`rganib o`rgat!</title>
     <!-- Bootstrap CSS from CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,7 +61,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/theme-dark.css">
-
 </head>
 
 <body class="body-dark theme-color-4">
@@ -117,10 +116,13 @@
                     <div class="collapse navbar-collapse">
                         <ul id="mainMenu" class="navbar-nav mobile-item mx-auto align-items-xl-center">
                             <li class="nav-item">
-                                <a href="#about" class="nav-link toggle">Bilimly</i></a>
+                                <a href="#about" class="nav-link toggle" data-lang="navBilimly">Bilimly</i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link toggle" href="#rasm">Rasmlar </i></a>
+                                <a class="nav-link" href="#course" data-lang="navCourses">Kurslar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link toggle" href="#rasm" data-lang="navImages">Rasmlar </i></a>
                             </li>
                             <li class="nav-item logo">
                                 <a class="navbar-brand nav-link" href="#" target="_self" title="Bilimly">
@@ -128,28 +130,32 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#fikr">Fikrlar</a>
+                                <a class="nav-link" href="#fikr" data-lang="navReviews">Fikrlar</a>
                             </li>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#aloqa">Aloqa</a>
+                                <a class="nav-link" href="#aloqa" data-lang="navContact">Aloqa</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="more-option mobile-item">
-                        <div class="item">
-                            <div class="language">
-                                <select class="niceselect">
-                                    <option value="1" selected>Uzbek</option>
-                                    <option value="2" disabled>Russian</option>
-                                    <option value="3" disabled>English</option>
-                                </select>
-                            </div>
+
+                    <div class="lang-dropdown mt-3 mt-lg-0">
+                        <button class="lang-current" id="langToggle">
+                            <span id="current-lang">UZ</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </button>
+
+                        <div class="lang-menu">
+                            <button class="lang-btn active" data-lang="uz">UZ</button>
+                            <button class="lang-btn" data-lang="en">EN</button>
+                            <button class="lang-btn" data-lang="ru">RU</button>
                         </div>
                     </div>
-
                 </nav>
             </div>
+
         </div>
     </header>
     <!-- Header-area end -->
@@ -160,11 +166,11 @@
             <div class="row align-items-center gx-xl-5">
                 <div class="col-lg-6">
                     <div class="banner-content mb-40">
-                        <h1 class="title mb-30" data-aos="fade-up" data-aos-delay="100">
+                        <h1 class="title mb-30" data-aos="fade-up" data-aos-delay="100" data-lang="heroTitle">
                             O`rgatib o`rgan, o`rganib o`rgat!
                         </h1>
-                        <p class="text" data-aos="fade-up" data-aos-delay="100">
-                            STEM va AI mavzularini amaliy va interaktiv tarzda o‘rganing, AI Student bilan real vaqtda
+                        <p class="text" data-aos="fade-up" data-aos-delay="100" data-lang="heroText">
+                            STEM va AI mavzularini amaliy va interaktiv tarzda o'rganing, AI Student bilan real vaqtda
                             bilimlaringizni baholang.
                         </p>
                         <div class="cta-btn mt-40 btn-groups aos-init aos-animate" data-aos="fade-up"
@@ -190,7 +196,7 @@
                                     data-src="assets/images/avatar-4.jpg" alt="Client Image">
                                 <span>+10</span>
                             </div>
-                            <span>Yuklanishlar soni: 0+</span>
+                            <span data-lang="downloadsCount">Yuklanishlar soni: 0+</span>
                         </div>
                     </div>
                 </div>
@@ -212,9 +218,9 @@
                 <!-- Section Title -->
                 <div class="col-12">
                     <div class="section-title title-center mb-20" data-aos="fade-up">
-                        <h2 class="title mb-15">Bilimly qanday ishlaydi</h2>
-                        <p class="text" data-aos="fade-up" data-aos-delay="100">
-                            Interaktiv o‘rganish va AI baholash orqali bilimni amaliy tarzda mustahkamlang.
+                        <h2 class="title mb-15" data-lang="workTitle">Bilimly qanday ishlaydi</h2>
+                        <p class="text" data-aos="fade-up" data-aos-delay="100" data-lang="workText">
+                            Interaktiv o'rganish va AI baholash orqali bilimni amaliy tarzda mustahkamlang.
                         </p>
                     </div>
                 </div>
@@ -230,9 +236,9 @@
                                     <i class="flaticon-downloads"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
-                                    <h4>Ilovani yuklab oling</h4>
-                                    <p class="card-text lh-1">
-                                        App Store yoki Play Market orqali Bilimly ilovasini o‘rnating.
+                                    <h4 data-lang="step1Title">Ilovani yuklab oling</h4>
+                                    <p class="card-text lh-1" data-lang="step1Text">
+                                        App Store yoki Play Market orqali Bilimly ilovasini o'rnating.
                                     </p>
                                 </div>
                                 <span class="count">01</span>
@@ -246,9 +252,9 @@
                                     <i class="flaticon-app-installation"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
-                                    <h4>Mavzuni tanlang</h4>
-                                    <p class="card-text lh-1">
-                                        Qiziqqan STEM yoki AI mavzuingizni tanlab, interaktiv mashg‘ulotlarni boshlang.
+                                    <h4 data-lang="step2Title">Mavzuni tanlang</h4>
+                                    <p class="card-text lh-1" data-lang="step2Text">
+                                        Qiziqqan STEM yoki AI mavzuingizni tanlab, interaktiv mashg'ulotlarni boshlang.
                                     </p>
                                 </div>
                                 <span class="count">02</span>
@@ -262,9 +268,9 @@
                                     <i class="flaticon-add-user"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
-                                    <h4>AI Student</h4>
-                                    <p class="card-text lh-1">
-                                        O‘rgangan mavzuni AI Student’ga tushuntiring va real vaqt tahlilini oling.
+                                    <h4 data-lang="step3Title">AI Student</h4>
+                                    <p class="card-text lh-1" data-lang="step3Text">
+                                        O'rgangan mavzuni AI Student'ga tushuntiring va real vaqt tahlilini oling.
                                     </p>
                                 </div>
                                 <span class="count">03</span>
@@ -278,8 +284,8 @@
                                     <i class="flaticon-version"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
-                                    <h4>Natijani oling</h4>
-                                    <p class="card-text lh-1">
+                                    <h4 data-lang="step4Title">Natijani oling</h4>
+                                    <p class="card-text lh-1" data-lang="step4Text">
                                         AI bilim darajangizni baholaydi va rivojlanish uchun aniq tavsiyalar beradi.
                                     </p>
                                 </div>
@@ -294,6 +300,128 @@
     </section>
 
     <!-- Work-area end -->
+
+    <!-- Courses area start -->
+    <section id="course" class="course-area pt-40 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title title-center mb-30" data-aos="fade-up">
+                        <h2 class="title" data-lang="coursesTitle">Our Courses</h2>
+                        <p class="text" data-lang="coursesText">Choose from our curated courses to level up your skills.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses grid (cards are injected from the coursesData JSON array) -->
+            <div class="row g-4" id="coursesGrid" data-aos="fade-up">
+                <!-- Cards will be injected here by JavaScript -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button id="loadMoreBtn" class="btn btn-primary bg-gradient rounded-pill">More</button>
+            </div>
+        </div>
+
+        <script>
+            // Course data (JSON array). Extend this array to add new courses.
+            const coursesData = [
+                {
+                    "id": 1,
+                    "title": "Frontend Development",
+                    "description": "Learn HTML, CSS, JavaScript and React from scratch.",
+                    "price": "$49",
+                    "image": "assets/images/screen-1.png"
+                },
+                {
+                    "id": 2,
+                    "title": "Python for Beginners",
+                    "description": "Start programming with Python and build real projects.",
+                    "price": "$39",
+                    "image": "assets/images/screen-2.png"
+                },
+                {
+                    "id": 3,
+                    "title": "Introduction to AI",
+                    "description": "Understand AI fundamentals and simple machine learning models.",
+                    "price": "$59",
+                    "image": "assets/images/screen-3.png"
+                }
+            ];
+
+            (function renderCourses() {
+                const grid = document.getElementById('coursesGrid');
+                if (!grid) return;
+
+                const initialLimit = 6;
+
+                function render(limit) {
+                    grid.innerHTML = '';
+
+                    const toRender = coursesData.slice(0, limit);
+
+                    toRender.forEach(course => {
+                        const col = document.createElement('div');
+                        col.className = 'col-lg-4 col-md-6 col-12';
+
+                        col.innerHTML = `
+                            <article class="card course-card h-100" aria-labelledby="course-${course.id}-title">
+                                <div class="img-wrap">
+                                    <img src="${course.image}" alt="${escapeHtml(course.title)}" loading="lazy">
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h3 class="card-title h5" id="course-${course.id}-title">${escapeHtml(course.title)}</h3>
+                                    <p class="card-text">${escapeHtml(course.description)}</p>
+                                    <div class="mt-auto course-meta">
+                                        <span class="price">${escapeHtml(course.price)}</span>
+                                        <a href="#" class="btn btn-sm btn-primary bg-gradient rounded-pill btn-buy" data-lang="buy">Buy</a>
+                                    </div>
+                                </div>
+                            </article>
+                        `;
+
+                        grid.appendChild(col);
+                    });
+
+                    const loadMoreBtn = document.getElementById('loadMoreBtn');
+                    if (!loadMoreBtn) return;
+                    if (limit >= coursesData.length) {
+                        loadMoreBtn.style.display = 'none';
+                    } else {
+                        loadMoreBtn.style.display = '';
+                    }
+                }
+
+                // initial render
+                render(Math.min(initialLimit, coursesData.length));
+
+                // load more behavior
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.addEventListener('click', function () {
+                        render(coursesData.length);
+                        this.style.display = 'none';
+                        // optional: smooth scroll to reveal
+                        // grid.lastElementChild && grid.lastElementChild.scrollIntoView({behavior: 'smooth', block: 'end'});
+                    });
+                }
+
+            })();
+
+            // Small helper to avoid HTML injection when rendering titles / text
+            function escapeHtml(text) {
+                if (!text) return '';
+                return String(text)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            }
+        </script>
+    </section>
+    <!-- Courses area end -->
 
     <!-- Choose-area start -->
     <section class="choose-area pt-100">
@@ -312,38 +440,38 @@
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="content-title mb-40">
 
-                        <h2 class="title mb-20">
+                        <h2 class="title mb-20" data-lang="whyTitle">
                             Nega aynan Bilimly?
                         </h2>
 
                         <div class="content-text">
-                            <p>
-                                Bilimly nazariyani o‘qitmaydi — u bilimni amaliyot orqali shakllantiradi.
-                                Darslar maxsus ishlab chiqilgan interaktiv formatda bo‘lib,
-                                foydalanuvchi mavzuni bevosita bajarish orqali o‘zlashtiradi.
+                            <p data-lang="whyText1">
+                                Bilimly nazariyani o'qitmaydi — u bilimni amaliyot orqali shakllantiradi.
+                                Darslar maxsus ishlab chiqilgan interaktiv formatda bo'lib,
+                                foydalanuvchi mavzuni bevosita bajarish orqali o'zlashtiradi.
                             </p>
 
-                            <p>
-                                AI Student o‘rgatish uchun emas, balki tushunishni tekshirish uchun yaratilgan.
-                                Siz mavzuni AI’ga tushuntirasiz, u esa bilim darajangizni real vaqt rejimida
+                            <p data-lang="whyText2">
+                                AI Student o'rgatish uchun emas, balki tushunishni tekshirish uchun yaratilgan.
+                                Siz mavzuni AI'ga tushuntirasiz, u esa bilim darajangizni real vaqt rejimida
                                 tahlil qilib, aniq va foydali xulosa beradi.
                             </p>
 
-                            <p>
+                            <p data-lang="whyText3">
                                 Ilovaning asosiy funksiyalarining <strong>60% bepul</strong>.
-                                To‘lovsiz ham interaktiv darslar va mashg‘ulotlardan foydalanishingiz mumkin.
+                                To'lovsiz ham interaktiv darslar va mashg'ulotlardan foydalanishingiz mumkin.
                             </p>
 
-                            <p>
+                            <p data-lang="whyText4">
                                 AI Student <strong>offline</strong> holatda ham ishlaydi.
-                                Internet bo‘lmagan joylarda ham bilimlaringizni mustahkamlashni davom ettiring.
+                                Internet bo'lmagan joylarda ham bilimlaringizni mustahkamlashni davom ettiring.
                             </p>
                         </div>
 
                         <!-- Buttons -->
                         <div class="d-flex align-items-center flex-wrap gap-25 mt-40" data-aos="fade-up">
                             <a href="#" class="btn btn-lg btn-primary bg-gradient rounded-pill"
-                                title="Bilimly ilovasini yuklab olish">
+                                title="Bilimly ilovasini yuklab olish" data-lang="downloadBtn">
                                 Ilovani yuklab olish
                             </a>
                         </div>
@@ -374,28 +502,28 @@
                 <div class="col-lg-6 order-lg-first" data-aos="fade-up">
                     <div class="content-title mb-40">
 
-                        <h2 class="title mb-20">
-                            Qiyin mavzularni oson yo‘l bilan o‘rganing
+                        <h2 class="title mb-20" data-lang="learnTitle">
+                            Qiyin mavzularni oson yo'l bilan o'rganing
                         </h2>
 
                         <div class="content-text">
-                            <p>
-                                Bizning ilova orqali siz mavzularni interaktiv yo‘l bilan o‘rganasiz.
+                            <p data-lang="learnText1">
+                                Bizning ilova orqali siz mavzularni interaktiv yo'l bilan o'rganasiz.
                                 Darslar foydalanuvchi uchun tushunarli, qiziqarli va bosqichma-bosqich tuzilgan.
                             </p>
 
-                            <p>
-                                Bu tizim boshqa joylardagi usullardan farq qiladi: ko‘pchilik ilovalarda
-                                birinchi o‘rganish keyin mashq qilinadi yoki mashq umuman bo‘lmaydi.
-                                Biz esa har bir mavzuda o‘rganish va amaliy mashqlarni uyg‘unlashtirib,
-                                bilimni mustahkamlashga e’tibor qaratamiz.
+                            <p data-lang="learnText2">
+                                Bu tizim boshqa joylardagi usullardan farq qiladi: ko'pchilik ilovalarda
+                                birinchi o'rganish keyin mashq qilinadi yoki mashq umuman bo'lmaydi.
+                                Biz esa har bir mavzuda o'rganish va amaliy mashqlarni uyg'unlashtirib,
+                                bilimni mustahkamlashga e'tibor qaratamiz.
                             </p>
                         </div>
 
                         <!-- Buttons -->
                         <div class="btn-groups gap-25 mt-20" data-aos="fade-up">
                             <a href="#" class="btn btn-lg btn-primary bg-gradient rounded-pill"
-                                title="Ilovani yuklab olish" target="_self">
+                                title="Ilovani yuklab olish" target="_self" data-lang="downloadBtn">
                                 Ilovani yuklab olish
                             </a>
                         </div>
@@ -415,7 +543,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title title-center mb-50" data-aos="fade-up">
-                        <h2 class="title">Bilimly`ni ko'rinishi</h2>
+                        <h2 class="title" data-lang="screenshotsTitle">Bilimly`ni ko'rinishi</h2>
                     </div>
                 </div>
                 <div class="col-12" data-aos="fade-up">
@@ -482,8 +610,9 @@
                 <!-- Section Title -->
                 <div class="col-12">
                     <div class="section-title title-center mb-50" data-aos="fade-up">
-                        <h2 class="title mt-0">Bizning Ochiqlik Siyosatimiz</h2>
-                        <p class="text">Foydalanuvchilarimiz va kurslarimiz bo‘yicha shaffof statistika</p>
+                        <h2 class="title mt-0" data-lang="opennessTitle">Bizning Ochiqlik Siyosatimiz</h2>
+                        <p class="text" data-lang="opennessText">Foydalanuvchilarimiz va kurslarimiz bo'yicha shaffof
+                            statistika</p>
                     </div>
                 </div>
 
@@ -499,7 +628,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="h2 font-medium mb-2"><span class="counter">0</span>M+</span>
-                                    <p class="card-text lh-1">Ilovani yuklab olganlar</p>
+                                    <p class="card-text lh-1" data-lang="downloadsLabel">Ilovani yuklab olganlar</p>
                                 </div>
                             </div>
                         </div>
@@ -512,7 +641,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="h2 font-medium mb-2"><span class="counter">0</span>K+</span>
-                                    <p class="card-text lh-1">Sotilgan kurslar</p>
+                                    <p class="card-text lh-1" data-lang="coursesLabel">Sotilgan kurslar</p>
                                 </div>
                             </div>
                         </div>
@@ -525,7 +654,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="h2 font-medium mb-2"><span class="counter">0</span>K+</span>
-                                    <p class="card-text lh-1">Faol foydalanuvchilar</p>
+                                    <p class="card-text lh-1" data-lang="activeUsersLabel">Faol foydalanuvchilar</p>
                                 </div>
                             </div>
                         </div>
@@ -538,7 +667,7 @@
                                 </div>
                                 <div class="card-content">
                                     <span class="h2 font-medium mb-2"><span class="counter">0</span>+</span>
-                                    <p class="card-text lh-1">Foydalanuvchi mamlakatlari</p>
+                                    <p class="card-text lh-1" data-lang="countriesLabel">Foydalanuvchi mamlakatlari</p>
                                 </div>
                             </div>
                         </div>
@@ -558,7 +687,7 @@
                 <!-- Section Title -->
                 <div class="col-12">
                     <div class="section-title title-center mb-20" data-aos="fade-up">
-                        <h2 class="title mt-0">Bilimly uchun fikrlar</h2>
+                        <h2 class="title mt-0" data-lang="reviewsTitle">Bilimly uchun fikrlar</h2>
                     </div>
                 </div>
 
@@ -573,17 +702,18 @@
                                     <div class="swiper-slide pb-10">
                                         <div class="slider-item text-center">
                                             <div class="quote">
-                                                <p class="text font-lg">
+                                                <p class="text font-lg" data-lang="review1Text">
                                                     "Bilimly App orqali qiyin mavzularni oson va qiziqarli tarzda
-                                                    o‘rganish
+                                                    o'rganish
                                                     imkoniyatini topdim. AI Student esa bilimlarimni mustahkamlashga
                                                     yordam
                                                     beradi."
                                                 </p>
                                             </div>
                                             <div class="client-info mt-20">
-                                                <h6 class="name mb-1">Sarvarbek</h6>
-                                                <span class="designation font-sm">O‘quvchi</span>
+                                                <h6 class="name mb-1" data-lang="review1Name">Sarvarbek</h6>
+                                                <span class="designation font-sm"
+                                                    data-lang="review1Role">O'quvchi</span>
                                             </div>
                                         </div>
                                     </div>
@@ -592,14 +722,14 @@
                                     <div class="swiper-slide pb-25">
                                         <div class="slider-item text-center">
                                             <div class="quote">
-                                                <p class="text font-lg">
-                                                    "App juda interaktiv va intuitiv. O‘rganish jarayoni tezroq va
-                                                    samaraliroq bo‘ldi. AI Student bilan mustahkamlash ajoyib!"
+                                                <p class="text font-lg" data-lang="review2Text">
+                                                    "App juda interaktiv va intuitiv. O'rganish jarayoni tezroq va
+                                                    samaraliroq bo'ldi. AI Student bilan mustahkamlash ajoyib!"
                                                 </p>
                                             </div>
                                             <div class="client-info mt-20">
-                                                <h6 class="name mb-1">Dilnoza</h6>
-                                                <span class="designation font-sm">Talaba</span>
+                                                <h6 class="name mb-1" data-lang="review2Name">Dilnoza</h6>
+                                                <span class="designation font-sm" data-lang="review2Role">Talaba</span>
                                             </div>
                                         </div>
                                     </div>
@@ -608,15 +738,16 @@
                                     <div class="swiper-slide pb-25">
                                         <div class="slider-item text-center">
                                             <div class="quote">
-                                                <p class="text font-lg">
+                                                <p class="text font-lg" data-lang="review3Text">
                                                     "Interaktiv darslar va AI Student kombinatsiyasi orqali eski
-                                                    o‘rganilgan
-                                                    bilimlarimni eslab, yangi mavzularni tez o‘zlashtirdim."
+                                                    o'rganilgan
+                                                    bilimlarimni eslab, yangi mavzularni tez o'zlashtirdim."
                                                 </p>
                                             </div>
                                             <div class="client-info mt-20">
-                                                <h6 class="name mb-1">Jasur</h6>
-                                                <span class="designation font-sm">O‘qituvchi</span>
+                                                <h6 class="name mb-1" data-lang="review3Name">Jasur</h6>
+                                                <span class="designation font-sm"
+                                                    data-lang="review3Role">O'qituvchi</span>
                                             </div>
                                         </div>
                                     </div>
@@ -633,7 +764,7 @@
             </div>
         </div>
 
-        <!-- Brands Logos (agar kerak bo‘lsa) -->
+        <!-- Brands Logos (agar kerak bo'lsa) -->
         <div class="brands d-none d-lg-block">
             <img class="lazyload blur-up" src="assets/images/placeholder.png" data-src="assets/images/slack.png"
                 alt="Brand Image">
@@ -666,13 +797,13 @@
                     <!-- Content -->
                     <div class="col-lg-6">
                         <div class="content">
-                            <h2 class="color-white mb-30">
+                            <h2 class="color-white mb-30" data-lang="newsletterTitle">
                                 Bilimly ilovasini hoziroq bepul yuklab oling
                             </h2>
 
                             <div class="content-text w-75 w-sm-100">
-                                <p class="text color-white">
-                                    Murakkab STEM va AI mavzularini interaktiv va amaliy tarzda o‘rganing.
+                                <p class="text color-white" data-lang="newsletterText">
+                                    Murakkab STEM va AI mavzularini interaktiv va amaliy tarzda o'rganing.
                                     AI Student yordamida bilimlaringizni mustahkamlang va
                                     ilovaning asosiy funksiyalarining 60%idan bepul foydalaning.
                                 </p>
@@ -721,9 +852,9 @@
                                         data-src="assets/images/logo/logo-5.svg" alt="Bilimly Logo">
                                 </a>
                             </div>
-                            <p>
+                            <p data-lang="footerAbout">
                                 Bilimly orqali qiyin STEM va AI mavzularini
-                                interaktiv va amaliy tarzda o‘rganing.
+                                interaktiv va amaliy tarzda o'rganing.
                                 AI Student bilimlaringizni mustahkamlashga yordam beradi.
                             </p>
                         </div>
@@ -732,22 +863,22 @@
                     <!-- Foydali linklar -->
                     <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
-                            <h5>Foydali Havolalar</h5>
+                            <h5 data-lang="footerLinks">Foydali Havolalar</h5>
                             <ul class="footer-links">
                                 <li>
-                                    <a href="#" target="_self" title="Download App">
+                                    <a href="#" target="_self" title="Download App" data-lang="footerDownload">
                                         App yuklab olish
                                     </a>
                                 </li>
                                 <li>
                                     <a href="assets/docs/Bilimly_ommafiy_oferta.pdf" target="_blank"
-                                        title="Bilimly ommaviy oferta">
+                                        title="Bilimly ommaviy oferta" data-lang="footerOffer">
                                         Ommaviy oferta (PDF)
                                     </a>
                                 </li>
                                 <li>
                                     <a href="assets/docs/bilimly_refund_policy.pdf" target="_blank"
-                                        title="Bilimly refund policy">
+                                        title="Bilimly refund policy" data-lang="footerRefund">
                                         Pulni qaytarish siyosati (PDF)
                                     </a>
                                 </li>
@@ -758,7 +889,7 @@
                     <!-- Aloqa -->
                     <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
-                            <h5>Aloqa uchun</h5>
+                            <h5 data-lang="footerContact">Aloqa uchun</h5>
                             <ul class="footer-links">
                                 <li>
                                     <a href="tel:+998932071332">+998 93 207 13 32</a>
@@ -773,7 +904,7 @@
                     <!-- App yuklab olish -->
                     <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
-                            <h5>App-ni yuklab oling</h5>
+                            <h5 data-lang="footerAppDownload">App-ni yuklab oling</h5>
                             <div class="btn-groups">
                                 <a href="#" class="btn btn-img radius-sm size-sm" title="App Store" target="_blank">
                                     <img class="lazyload blur-up" src="assets/images/placeholder.png"
@@ -810,7 +941,7 @@
                     <span>
                         © <span id="footerDate"></span>
                         <a href="#" class="color-primary">Bilimly</a>.
-                        Barcha huquqlar himoyalangan.
+                        <span data-lang="copyright">Barcha huquqlar himoyalangan.</span>
                     </span>
 
                     <script>
@@ -855,6 +986,240 @@
     <script src="assets/js/vendors/aos.min.js"></script>
     <!-- Main script JS -->
     <script src="assets/js/script.js"></script>
+
+    <!-- Language Switcher Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load language data
+            let langData = null;
+
+            // Fetch the language data
+            fetch('lang.json')
+                .then(response => response.json())
+                .then(data => {
+                    langData = data;
+
+                    // Get saved language from localStorage or default to 'uz'
+                    const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+
+                    // Set the active language button
+                    document.querySelectorAll('.lang-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-lang') === savedLang) {
+                            btn.classList.add('active');
+                        }
+                    });
+
+                    // Apply the saved language
+                    applyLanguage(savedLang);
+                })
+                .catch(error => console.error('Error loading language data:', error));
+
+            // Add click event listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const selectedLang = this.getAttribute('data-lang');
+
+                    // Update active button
+                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Save selected language to localStorage
+                    localStorage.setItem('selectedLanguage', selectedLang);
+
+                    // Apply the selected language
+                    applyLanguage(selectedLang);
+                });
+            });
+
+            // Function to apply language
+            function applyLanguage(lang) {
+                if (!langData) return;
+
+                // Update all elements with data-lang attribute
+                document.querySelectorAll('[data-lang]').forEach(element => {
+                    const key = element.getAttribute('data-lang');
+                    if (langData[lang] && langData[lang][key]) {
+                        element.textContent = langData[lang][key];
+                    }
+                });
+
+                // Update page title
+                if (langData[lang] && langData[lang]['pageTitle']) {
+                    document.title = langData[lang]['pageTitle'];
+                }
+
+                // Update meta tags
+                updateMetaTag('description', langData[lang]['metaDescription']);
+                updateMetaTag('keywords', langData[lang]['metaKeywords']);
+                updateMetaProperty('og:title', langData[lang]['ogTitle']);
+                updateMetaProperty('og:description', langData[lang]['ogDescription']);
+                updateMetaProperty('twitter:title', langData[lang]['twitterTitle']);
+                updateMetaProperty('twitter:description', langData[lang]['twitterDescription']);
+            }
+
+            // Helper function to update meta tags
+            function updateMetaTag(name, content) {
+                let meta = document.querySelector(`meta[name="${name}"]`);
+                if (meta) {
+                    meta.setAttribute('content', content);
+                }
+            }
+
+            // Helper function to update meta property tags
+            function updateMetaProperty(property, content) {
+                let meta = document.querySelector(`meta[property="${property}"]`);
+                if (meta) {
+                    meta.setAttribute('content', content);
+                }
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            let langData = null;
+
+            const desktopDropdown = document.querySelector('.lang-dropdown');
+            const mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
+
+            // Fetch the language data
+            fetch('lang.json')
+                .then(response => response.json())
+                .then(data => {
+                    langData = data;
+
+                    // Get saved language from localStorage or default to 'uz'
+                    const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+
+                    // Apply the saved language (content update)
+                    applyLanguage(savedLang);
+
+                    // Ensure dropdown UI (desktop + mobile) reflects selection
+                    ensureMobileDropdown();
+                    updateDropdownUI(savedLang);
+
+                    // Wire up handlers after DOM is prepared
+                    setupToggleHandlers();
+                    setupLangButtons();
+                })
+                .catch(error => console.error('Error loading language data:', error));
+
+            // Create a mobile-friendly clone of the dropdown inside the mobile menu
+            function ensureMobileDropdown() {
+                if (!mobileMenuWrapper || !desktopDropdown) return;
+
+                // Avoid creating duplicate clones
+                if (mobileMenuWrapper.querySelector('.mobile-lang-dropdown')) return;
+
+                const clone = desktopDropdown.cloneNode(true);
+                clone.classList.add('mobile-lang-dropdown');
+
+                // Remove IDs inside the clone to avoid duplicates
+                clone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+
+                // Adjust classes so mobile styles can target it if needed
+                mobileMenuWrapper.appendChild(clone);
+            }
+
+            // Toggle open/close for desktop and mobile dropdowns
+            function setupToggleHandlers() {
+                if (desktopDropdown) {
+                    const desktopToggle = desktopDropdown.querySelector('.lang-current');
+                    desktopToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        desktopDropdown.classList.toggle('open');
+                    });
+                }
+
+                const mobileDropdown = mobileMenuWrapper && mobileMenuWrapper.querySelector('.mobile-lang-dropdown');
+                if (mobileDropdown) {
+                    const mobileToggle = mobileDropdown.querySelector('.lang-current');
+                    mobileToggle.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        mobileDropdown.classList.toggle('open');
+                    });
+                }
+
+                // Close dropdowns when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (desktopDropdown && !desktopDropdown.contains(e.target)) desktopDropdown.classList.remove('open');
+                    const m = mobileMenuWrapper && mobileMenuWrapper.querySelector('.mobile-lang-dropdown');
+                    if (m && !m.contains(e.target)) m.classList.remove('open');
+                });
+            }
+
+            // Setup language button clicks (handles buttons in both desktop and mobile dropdowns)
+            function setupLangButtons() {
+                document.addEventListener('click', function (e) {
+                    const btn = e.target.closest('.lang-btn');
+                    if (!btn) return;
+
+                    const selectedLang = btn.getAttribute('data-lang');
+
+                    // Update localStorage
+                    localStorage.setItem('selectedLanguage', selectedLang);
+
+                    // Apply language
+                    applyLanguage(selectedLang);
+
+                    // Update dropdown UI
+                    updateDropdownUI(selectedLang);
+
+                    // Close any open dropdowns
+                    if (desktopDropdown) desktopDropdown.classList.remove('open');
+                    const mobileDropdown = mobileMenuWrapper && mobileMenuWrapper.querySelector('.mobile-lang-dropdown');
+                    if (mobileDropdown) mobileDropdown.classList.remove('open');
+                });
+            }
+
+            // Function to update dropdown UI (current label and active class)
+            function updateDropdownUI(lang) {
+                // Update any visible current-lang spans (desktop + mobile clones)
+                document.querySelectorAll('.lang-current span').forEach(span => {
+                    span.textContent = (lang || 'UZ').toUpperCase();
+                });
+
+                // Update active state for all lang-btn instances
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            // Function to apply language (content + meta)
+            function applyLanguage(lang) {
+                if (!langData) return;
+
+                document.querySelectorAll('[data-lang]').forEach(element => {
+                    const key = element.getAttribute('data-lang');
+                    if (langData[lang] && langData[lang][key]) {
+                        element.textContent = langData[lang][key];
+                    }
+                });
+
+                // Page title
+                if (langData[lang] && langData[lang]['pageTitle']) {
+                    document.title = langData[lang]['pageTitle'];
+                }
+
+                // Meta tags
+                updateMetaTag('description', langData[lang]['metaDescription']);
+                updateMetaTag('keywords', langData[lang]['metaKeywords']);
+                updateMetaProperty('og:title', langData[lang]['ogTitle']);
+                updateMetaProperty('og:description', langData[lang]['ogDescription']);
+                updateMetaProperty('twitter:title', langData[lang]['twitterTitle']);
+                updateMetaProperty('twitter:description', langData[lang]['twitterDescription']);
+            }
+
+            function updateMetaTag(name, content) {
+                let meta = document.querySelector(`meta[name="${name}"]`);
+                if (meta) meta.setAttribute('content', content);
+            }
+
+            function updateMetaProperty(property, content) {
+                let meta = document.querySelector(`meta[property="${property}"]`);
+                if (meta) meta.setAttribute('content', content);
+            }
+        });
+
+    </script>
 </body>
 
 </html>
