@@ -31,19 +31,12 @@
     <link rel="icon" type="image/png" href="assets/images/logo/logo-5.svg">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/logo/fav-4.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/logo-5.svg" type="image/x-icon">
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-pO1o1ZnT2z3eJz7yF2yX/6lZgXw6rG6prkXg5Zw6lK1kQF7LzZBZU7rqZm7v8Rf+K8x+qA9Qv8OXlN9NQb2vLg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Flaticon -->
-    <link rel="stylesheet" href="assets/fonts/flaticon/font/flaticon.css">
-
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/vendors/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.min.css">
 
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
@@ -55,7 +48,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- Animate -->
-    <link rel="stylesheet" href="assets/css/vendors/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
 
     <!-- Main / Theme -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -234,12 +227,12 @@
                         <div class="col-sm-6 col-lg-3 item mt-30" data-aos="fade-up">
                             <div class="card border text-center radius-md pb-10">
                                 <div class="card-icon mx-auto">
-                                    <i class="flaticon-downloads"></i>
+                                    <i class="fa-solid fa-cloud-arrow-down"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
                                     <h4 data-lang="step1Title">Ilovani yuklab oling</h4>
                                     <p class="card-text lh-1" data-lang="step1Text">
-                                        App Store yoki Play Market orqali Bilimly ilovasini o'rnating.
+                                        App Store yoki Play Market orqali Bilimly ilovasini o'rnating.<br>
                                     </p>
                                 </div>
                                 <span class="count">01</span>
@@ -250,7 +243,7 @@
                         <div class="col-sm-6 col-lg-3 item mt-30" data-aos="fade-up">
                             <div class="card border text-center radius-md pb-10">
                                 <div class="card-icon mx-auto">
-                                    <i class="flaticon-app-installation"></i>
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
                                     <h4 data-lang="step2Title">Mavzuni tanlang</h4>
@@ -266,7 +259,7 @@
                         <div class="col-sm-6 col-lg-3 item mt-30" data-aos="fade-up">
                             <div class="card border text-center radius-md pb-10">
                                 <div class="card-icon mx-auto">
-                                    <i class="flaticon-add-user"></i>
+                                    <i class="fa-solid fa-user-plus"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
                                     <h4 data-lang="step3Title">AI Student</h4>
@@ -282,7 +275,7 @@
                         <div class="col-sm-6 col-lg-3 item mt-30" data-aos="fade-up">
                             <div class="card border text-center radius-md pb-10">
                                 <div class="card-icon mx-auto">
-                                    <i class="flaticon-version"></i>
+                                    <i class="fa-solid fa-chart-line"></i>
                                 </div>
                                 <div class="card-content px-2 ptb-30">
                                     <h4 data-lang="step4Title">Natijani oling</h4>
@@ -783,7 +776,7 @@
                     <!-- App yuklab olish -->
                     <div class="col-lg-2 col-md-6 col-sm-6">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
-                            <h5 data-lang="footerAppDownload">App-ni yuklab oling</h5>
+                            <h5 data-lang="footerAppDownload">Appni yuklab oling</h5>
                             <div class="btn-groups">
                                 <a href="#" class="btn btn-img radius-sm size-sm" title="App Store" target="_blank">
                                     <img class="lazyload blur-up" src="assets/images/placeholder.png"
@@ -865,6 +858,8 @@
     <script src="assets/js/vendors/aos.min.js"></script>
     <!-- Main script JS -->
     <script src="assets/js/script.js"></script>
+    <!-- Language data (local fallback for file://) -->
+    <script src="assets/js/lang-data.js"></script>
 
     <!-- Language Switcher Script -->
     <script>
@@ -873,26 +868,44 @@
             let langData = null;
 
             // Fetch the language data
-            fetch('lang.json')
-                .then(response => response.json())
-                .then(data => {
-                    langData = data;
+            const isFileProtocol = window.location.protocol === 'file:';
+            if (isFileProtocol && window.__langData) {
+                langData = window.__langData;
 
-                    // Get saved language from localStorage or default to 'uz'
-                    const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+                const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-lang') === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
 
-                    // Set the active language button
-                    document.querySelectorAll('.lang-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                        if (btn.getAttribute('data-lang') === savedLang) {
-                            btn.classList.add('active');
+                applyLanguage(savedLang);
+            } else {
+                fetch('lang.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        langData = data;
+
+                        const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+                        document.querySelectorAll('.lang-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.getAttribute('data-lang') === savedLang) {
+                                btn.classList.add('active');
+                            }
+                        });
+
+                        applyLanguage(savedLang);
+                    })
+                    .catch(error => {
+                        if (window.__langData) {
+                            langData = window.__langData;
+                            applyLanguage(localStorage.getItem('selectedLanguage') || 'uz');
+                            return;
                         }
+                        console.error('Error loading language data:', error);
                     });
-
-                    // Apply the saved language
-                    applyLanguage(savedLang);
-                })
-                .catch(error => console.error('Error loading language data:', error));
+            }
 
             // Add click event listeners to language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -957,21 +970,35 @@
             let langData = null;
 
             // Fetch the language data
-            fetch('lang.json')
-                .then(response => response.json())
-                .then(data => {
-                    langData = data;
+            const isFileProtocol = window.location.protocol === 'file:';
+            if (isFileProtocol && window.__langData) {
+                langData = window.__langData;
+                const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
 
-                    // Get saved language from localStorage or default to 'uz'
-                    const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+                applyLanguage(savedLang);
+                updateDropdownUI(savedLang);
+            } else {
+                fetch('lang.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        langData = data;
 
-                    // Apply the saved language (content update)
-                    applyLanguage(savedLang);
+                        const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
 
-                    // Update dropdown UI
-                    updateDropdownUI(savedLang);
-                })
-                .catch(error => console.error('Error loading language data:', error));
+                        applyLanguage(savedLang);
+                        updateDropdownUI(savedLang);
+                    })
+                    .catch(error => {
+                        if (window.__langData) {
+                            langData = window.__langData;
+                            const savedLang = localStorage.getItem('selectedLanguage') || 'uz';
+                            applyLanguage(savedLang);
+                            updateDropdownUI(savedLang);
+                            return;
+                        }
+                        console.error('Error loading language data:', error);
+                    });
+            }
 
             // Dropdown toggle
             const dropdown = document.querySelector('.lang-dropdown');

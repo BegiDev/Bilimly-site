@@ -1,4 +1,4 @@
-{
+window.__langData = {
   "uz": {
     "metaDescription": "Bilimly - AI asoslangan STEM va sun'iy intellekt ta'lim platformasi. Interaktiv darslar va AI Student yordamida bilimlaringizni mustahkamlang.",
     "metaKeywords": "Bilimly, STEM, AI, ta'lim, interaktiv o'rganish, AI Student, EdTech, ta'lim ilovasi, o'quv platforma, bilim mustahkamlash, amaliy mashg'ulotlar",
@@ -378,3 +378,4 @@
     "privacyBackHome": "На главную"
   }
 }
+;

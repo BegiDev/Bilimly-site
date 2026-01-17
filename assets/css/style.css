@@ -4562,8 +4562,17 @@ body.mobile-menu-active {
 /* -----------------------------------------
     Work CSS
 ----------------------------------------- */
+.work-area .item {
+  display: flex;
+}
 .work-area .card {
   margin-bottom: 13px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.work-area .card .card-content {
+  flex: 1;
 }
 .work-area .card-icon {
   --size: 150px;
