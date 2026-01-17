@@ -864,12 +864,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="privacy_policy.html" target="_self" data-lang="footerPrivacyPolicy">
+                                    <a href="/privacy-policy/" target="_self" data-lang="footerPrivacyPolicy">
                                         Privacy Policy
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="delete_account.html" target="_self" data-lang="footerDeleteAccount">
+                                    <a href="/delete-account/" target="_self" data-lang="footerDeleteAccount">
                                         Delete Account
                                     </a>
                                 </li>
@@ -1273,6 +1273,12 @@
                 coursesSection.classList.add('d-none');
                 coursesNav.setAttribute('aria-hidden', 'true');
                 coursesSection.setAttribute('aria-hidden', 'true');
+            }
+
+            const isFileProtocol = window.location.protocol === 'file:';
+            if (isFileProtocol) {
+                // Avoid CORS errors when opened via file://
+                return;
             }
 
             fetch('https://ipapi.co/json/')
